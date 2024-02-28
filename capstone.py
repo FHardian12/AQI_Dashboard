@@ -8,17 +8,6 @@ st.set_page_config(
     page_title = 'Dashboard '
     ,layout='wide'
 )
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: black;
-        color: white;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 # Definisikan nama file CSV
 nama_file = 'Database_Capstone.csv'
