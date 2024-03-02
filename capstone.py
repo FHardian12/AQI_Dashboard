@@ -461,7 +461,7 @@ elif selected_option == "Analisis Kualitas Udara":
             y=alt.Y('PM10:Q', axis=alt.Axis(title='Rata-rata PM10', grid=False)),  # Menghilangkan gridline pada sumbu y
         ).properties(
             width=600,
-            height=300
+            height=400
         )
 
         # Menambahkan bullet points untuk setiap titik pada plot garis
@@ -500,7 +500,7 @@ elif selected_option == "Analisis Kualitas Udara":
             y=alt.Y('Temp:Q', axis=alt.Axis(title='Rata-rata Suhu (Temp)', grid=False)), 
         ).properties(
             width=600,
-            height=300
+            height=400
         )
 
         # Menambahkan bullet points untuk rata-rata suhu (Temp)
@@ -541,7 +541,7 @@ elif selected_option == "Analisis Kualitas Udara":
             y=alt.Y('Humid:Q', axis=alt.Axis(title='Rata-rata Kelembaban', grid=False)), 
         ).properties(
             width=600,
-            height=300
+            height=400
         )
 
         # Menambahkan bullet points untuk rata-rata suhu (Temp)
@@ -598,7 +598,7 @@ elif selected_option == "Analisis Kualitas Udara":
                             legend=alt.Legend(title="Status AQI")),
             tooltip=['Provinsi', alt.Tooltip('AQI:Q', format=',d'), 'status']
         ).properties(
-            width=800,
+            width=600,
             height=400,
         )
 
