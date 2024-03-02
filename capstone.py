@@ -450,8 +450,8 @@ elif selected_option == "Analisis Kualitas Udara":
     """
     st.markdown(narasi_tiga, unsafe_allow_html=True)
 
-    p1, p2 = st.columns([1,1])
-    with p1:
+    r1, r2, r3 = st.columns([1, 2, 1])
+    with r2:
         # Menghitung rata-rata PM10 per hari
         avg_pm10_per_day = df.groupby('tgl_day')['PM10'].mean().reset_index()
 
@@ -489,6 +489,7 @@ elif selected_option == "Analisis Kualitas Udara":
         # if st.checkbox('Tampilkan Data', key='checkbox2'):
         #     st.write(avg_pm10_per_day)
 
+    p1, p2, p3 = st.columns([1, 2, 1])
     with p2:
         # Menghitung rata-rata suhu (Temp) per hari
         avg_temp_per_day = df.groupby('tgl_day')['Temp'].mean().reset_index()
@@ -528,6 +529,7 @@ elif selected_option == "Analisis Kualitas Udara":
         # # Opsional: Menampilkan data jika checkbox dicentang
         # if st.checkbox('Tampilkan Data', key='checkbox4'):
         #     st.write(avg_temp_per_day)
+    
     q1, q2, q3 = st.columns([1, 2, 1])
     with q2:
         # Menghitung rata-rata suhu (Temp) per hari
