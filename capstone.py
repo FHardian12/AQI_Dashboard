@@ -410,7 +410,7 @@ elif selected_option == "Analisis Kualitas Udara":
             y=alt.Y('AQI:Q', axis=alt.Axis(title='Rata-rata AQI', grid=False)),  # Sumbu-y untuk AQI
         ).properties(
             width=600,
-            height=300
+            height=400
         )
 
         # Tambahkan bullet (titik) untuk setiap titik pada line plot
@@ -598,7 +598,7 @@ elif selected_option == "Analisis Kualitas Udara":
                             legend=alt.Legend(title="Status AQI")),
             tooltip=['Provinsi', alt.Tooltip('AQI:Q', format=',d'), 'status']
         ).properties(
-            width=600,
+            width=700,
             height=400,
         )
 
