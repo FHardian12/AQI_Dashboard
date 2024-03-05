@@ -398,3 +398,24 @@ Tanggal,Provinsi,Status,AQI,PM2.5,PM10,Temp,Humid
 3/3/2024,Sumatera Selatan,POOR,143,54,0,31,70
 3/3/2024,Sumatera Utara,POOR,115,41,0,32,67
 3/3/2024,Yogyakarta,GOOD,46,10,0,29,76
+3/4/2024,Aceh,GOOD,17,4,0,25,81
+3/4/2024,Bengkulu,GOOD,21,4,0,23,99
+3/4/2024,Jakarta,GOOD,29,6,32,26,89
+3/4/2024,Jambi,GOOD,38,9,0,24,99
+3/4/2024,Jawa Barat,GOOD,28,5,5,20,94
+3/4/2024,Jawa Tengah,POOR,112,40,0,25,91
+3/4/2024,Kalimantan Barat,MODERATE,58,17,13,26,95
+3/4/2024,Kalimantan Selatan,MODERATE,66,20,0,28,86
+3/4/2024,Kalimantan Tengah,GOOD,28,6,2,24,98
+3/4/2024,Kalimantan Timur,GOOD,29,7,0,26,90
+3/4/2024,Kepulauan Riau,MODERATE,66,19,0,26,94
+3/4/2024,Lampung,MODERATE,53,12,0,23,90
+3/4/2024,Papua Barat,MODERATE,58,15,32,29,73
+3/4/2024,Riau,MODERATE,61,17,0,27,94
+3/4/2024,Sulawesi Selatan,MODERATE,66,19,0,26,100
+3/4/2024,Sulawesi Tengah,MODERATE,57,15,0,19,92
+3/4/2024,Sulawesi Utara,GOOD,38,9,0,19,92
+3/4/2024,Sumatera Barat,GOOD,38,9,2,21,95
+3/4/2024,Sumatera Selatan,POOR,141,53,0,24,98
+3/4/2024,Sumatera Utara,POOR,134,49,0,26,94
+3/4/2024,Yogyakarta,MODERATE,57,15,0,23,93
