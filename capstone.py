@@ -622,7 +622,7 @@ elif selected_option == "Analisis Kualitas Udara":
         # Menampilkan grafik menggunakan Streamlit
         st.write(chart_with_text)
     narasi_empat = """
-    <p style='text-align: justify; text-indent: 50px;'>Dari 22 provinsi yang diamati, sebanyak 13 provinsi memiliki status kualitas udara "Moderat". Ini menunjukkan bahwa sebagian besar provinsi memiliki kualitas udara yang dapat diterima, meskipun masih memerlukan pemantauan dan kewaspadaan terhadap polusi udara.
+    <p style='text-align: justify; text-indent: 50px;'>Dari 21 provinsi yang diamati, sebanyak 13 provinsi memiliki status kualitas udara "Moderat". Ini menunjukkan bahwa sebagian besar provinsi memiliki kualitas udara yang dapat diterima, meskipun masih memerlukan pemantauan dan kewaspadaan terhadap polusi udara.
     Sebanyak 6 provinsi lainnya memiliki status kualitas udara "Baik". Ini menunjukkan bahwa sebagian besar provinsi memiliki kualitas udara yang baik dan relatif bersih, dengan dampak terhadap kesehatan yang minimal.
     Sebanyak 2 provinsi yang memiliki status kualitas udara "Buruk". Ini mungkin menjadi perhatian khusus karena menunjukkan tingkat polusi udara yang tinggi di provinsi-provinsi tersebut, yang memerlukan tindakan lebih lanjut untuk mengurangi dampaknya terhadap kesehatan masyarakat.
     Dengan memperhatikan distribusi status kualitas udara di antara 22 provinsi yang diamati, kita dapat mengidentifikasi provinsi-provinsi yang memerlukan perhatian khusus dalam upaya menjaga kualitas udara yang sehat dan lingkungan yang bersih. Ini dapat menjadi dasar untuk pengembangan kebijakan dan program perlindungan lingkungan yang lebih efektif di masa depan.</p>
