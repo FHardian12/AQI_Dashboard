@@ -409,7 +409,7 @@ elif selected_option == "Analisis Kualitas Udara":
             x=alt.X('tgl_day:T', axis=alt.Axis(title='Tanggal', format='%d-%m-%Y', labelAngle=90)),  # Tambahkan labelAngle=0
             y=alt.Y('AQI:Q', axis=alt.Axis(title='Rata-rata AQI', grid=False)),  # Sumbu-y untuk AQI
         ).properties(
-            width=600,
+            width=800,
             height=400
         )
 
@@ -460,7 +460,7 @@ elif selected_option == "Analisis Kualitas Udara":
             x=alt.X('tgl_day:T', axis=alt.Axis(title='Tanggal', format='%d-%m-%Y', labelAngle=90)),  # Mengubah format tanggal dan labelAngle
             y=alt.Y('PM10:Q', axis=alt.Axis(title='Rata-rata PM10', grid=False)),  # Menghilangkan gridline pada sumbu y
         ).properties(
-            width=600,
+            width=800,
             height=400
         )
 
@@ -499,7 +499,7 @@ elif selected_option == "Analisis Kualitas Udara":
             x=alt.X('tgl_day:T', axis=alt.Axis(title='Tanggal', format='%d-%m-%Y', labelAngle=90)),  
             y=alt.Y('Temp:Q', axis=alt.Axis(title='Rata-rata Suhu (Temp)', grid=False)), 
         ).properties(
-            width=600,
+            width=800,
             height=400
         )
 
@@ -540,7 +540,7 @@ elif selected_option == "Analisis Kualitas Udara":
             x=alt.X('tgl_day:T', axis=alt.Axis(title='Tanggal', format='%d-%m-%Y', labelAngle=90)),  
             y=alt.Y('Humid:Q', axis=alt.Axis(title='Rata-rata Kelembaban', grid=False)), 
         ).properties(
-            width=600,
+            width=800,
             height=400
         )
 
