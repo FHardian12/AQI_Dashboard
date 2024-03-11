@@ -249,7 +249,7 @@ if selected_option == "Beranda":
             text_color = 'white'
             # Plot bar chart
             bar_chart = alt.Chart(df_filtered).mark_bar().encode(
-                x=alt.X('Provinsi:N', title='Provinsi'),
+                x=alt.X('Provinsi:N', title='Provinsi', sort='-y'),
                 color=alt.Color('Status:N', scale=color_scale),
                 y=alt.Y('AQI:Q', title='AQI', axis= None),
                 tooltip=['Provinsi', 'AQI']
