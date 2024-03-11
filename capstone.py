@@ -591,7 +591,7 @@ elif selected_option == "Analisis Kualitas Udara":
 
         # Membuat bar chart rata-rata AQI per provinsi
         bar_chart_aqi = alt.Chart(avg_aqi_per_province).mark_bar().encode(
-            x=alt.X('Provinsi:O', sort='-y'),
+            x=alt.X('Provinsi:N', sort='-y', axis=alt.Axis(labelAngle=-45)),
             y=alt.Y('AQI:Q', axis=None),
             color=alt.Color('status:N', scale=alt.Scale(domain=['GOOD', 'MODERATE', 'POOR', 'UNHEALTHY', 'VERY UNHEALTHY'],
                                                     range=['green', 'yellow', 'orange', 'red', 'darkred']),
@@ -611,7 +611,7 @@ elif selected_option == "Analisis Kualitas Udara":
             color='black',
             fontWeight='bold'
         ).encode(
-            x='Provinsi:O',
+            x=alt.X('Provinsi:N', sort='-y', axis=alt.Axis(labelAngle=-45)),
             y='AQI:Q',
             text=alt.Text('AQI:Q', format='.0f')
         )
