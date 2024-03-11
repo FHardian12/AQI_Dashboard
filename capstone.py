@@ -460,7 +460,7 @@ elif selected_option == "Analisis Kualitas Udara":
             x=alt.X('tgl_day:T', axis=alt.Axis(title='Tanggal', format='%d-%m-%Y', labelAngle=90)),  # Mengubah format tanggal dan labelAngle
             y=alt.Y('PM10:Q', axis=alt.Axis(title='Rata-rata PM10', grid=False)),  # Menghilangkan gridline pada sumbu y
         ).properties(
-            width=800,
+            width=700,
             height=400
         )
 
@@ -499,7 +499,7 @@ elif selected_option == "Analisis Kualitas Udara":
             x=alt.X('tgl_day:T', axis=alt.Axis(title='Tanggal', format='%d-%m-%Y', labelAngle=90)),  
             y=alt.Y('Temp:Q', axis=alt.Axis(title='Rata-rata Suhu (Temp)', grid=False)), 
         ).properties(
-            width=800,
+            width=700,
             height=400
         )
 
@@ -540,7 +540,7 @@ elif selected_option == "Analisis Kualitas Udara":
             x=alt.X('tgl_day:T', axis=alt.Axis(title='Tanggal', format='%d-%m-%Y', labelAngle=90)),  
             y=alt.Y('Humid:Q', axis=alt.Axis(title='Rata-rata Kelembaban', grid=False)), 
         ).properties(
-            width=800,
+            width=700,
             height=400
         )
 
@@ -591,7 +591,7 @@ elif selected_option == "Analisis Kualitas Udara":
 
         # Membuat bar chart rata-rata AQI per provinsi
         bar_chart_aqi = alt.Chart(avg_aqi_per_province).mark_bar().encode(
-            x=alt.X('Provinsi', sort='-y'),
+            x=alt.X('Provinsi', sort='-x'),
             y=alt.Y('AQI:Q', axis=None),
             color=alt.Color('status:N', scale=alt.Scale(domain=['GOOD', 'MODERATE', 'POOR', 'UNHEALTHY', 'VERY UNHEALTHY'],
                                                     range=['green', 'yellow', 'orange', 'red', 'darkred']),
