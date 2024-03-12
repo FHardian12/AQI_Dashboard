@@ -385,7 +385,7 @@ elif selected_option == "Analisis Kualitas Udara":
     st.markdown(narasi_dua, unsafe_allow_html=True)
     
     st.subheader('Trend Rata Rata AQI Indonesia')
-    lca1, lca2, lca3 = st.columns([1, 2, 2])
+    lca1, lca2, lca3 = st.columns([1, 2, 4])
     df['Tanggal'] = pd.to_datetime(df['Tanggal'])
 
     with lca2:
