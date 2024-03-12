@@ -385,7 +385,7 @@ elif selected_option == "Analisis Kualitas Udara":
     st.markdown(narasi_dua, unsafe_allow_html=True)
     
     st.subheader('Trend Rata Rata AQI Indonesia')
-    lca1, lca2, lca3 = st.columns([1, 2, 1])
+    lca1, lca2, lca3 = st.columns([1, 2, 2])
     df['Tanggal'] = pd.to_datetime(df['Tanggal'])
 
     with lca2:
@@ -409,7 +409,7 @@ elif selected_option == "Analisis Kualitas Udara":
             x=alt.X('tgl_day:T', axis=alt.Axis(title='Tanggal', format='%d-%m-%Y', labelAngle=90)),  # Tambahkan labelAngle=0
             y=alt.Y('AQI:Q', axis=alt.Axis(title='Rata-rata AQI', grid=False)),  # Sumbu-y untuk AQI
         ).properties(
-            width=800,
+            width=700,
             height=400
         )
 
