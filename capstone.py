@@ -31,7 +31,7 @@ st.sidebar.title("Menu")
 # Pilihan menu dalam bentuk select box
 selected_option = st.sidebar.selectbox(
     "Pilih Menu",
-    ["Beranda", "Analisis Kualitas Udara"]
+    ["Dashboard Harian", "Analisis Kualitas Udara"]
 )
 
 # Membuat dua kolom di sidebar
@@ -44,7 +44,7 @@ col1.image('email.jpg', width=20)
 col2.markdown("hardianferri@gmail.com")
 
 # Konten untuk setiap pilihan menu
-if selected_option == "Beranda":
+if selected_option == "Dashboard Harian":
     st.write(f"<h1 style='text-align: center;'>Dashboard Harian AQI Indonesia Pada {curr_day.strftime('%d-%m-%Y')}</h1>", unsafe_allow_html=True)
 
     data = pd.pivot_table(
