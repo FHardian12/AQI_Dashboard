@@ -227,8 +227,10 @@ if selected_option == "Dashboard Harian":
             title=f'Persentase Status Kualitas Udara Per Provinsi'
         )
         # Tambahkan teks untuk menampilkan persentase di sekitar juring pie chart
-        textpie = pie_chart.mark_text(align='center', baseline='middle', radius=1.1).encode(
-            text=alt.Text('Percentage:Q', format='.1f')
+        textpie = pie_chart.mark_text(align='center', baseline='middle', angle=alt.Text('mid_angle'), radius=125).encode(
+            text=alt.Text('Percentage:Q', format='.1f'),
+            angle=alt.Angle('mid_angle', scale=alt.Scale(range=[0, 360]), sort=False),
+            radius=alt.Radius(1.1)
         )
         # Gabungkan pie chart dan teks
         pie_chart_with_text = pie_chart + textpie
