@@ -206,7 +206,7 @@ if selected_option == "Dashboard Harian":
         # Hitung jumlah status
         status_count = df_selected_date['Status'].value_counts(normalize=True).reset_index()
         status_count.columns = ['Status', 'Percentage']
-        status_count['Percentage'] = status_count['Percentage'] * 100  # Convert to percentage
+        status_count['Percentage'] = (status_count['Percentage'] * 100).astype(int)  # Convert to percentage and remove decimal
         # Definisikan skala warna sesuai dengan kategori status
         color_scale = alt.Scale(
             domain=['GOOD', 'MODERATE', 'POOR', 'UNHEALTHY', 'VERY UNHEALTHY'],
@@ -216,7 +216,7 @@ if selected_option == "Dashboard Harian":
         pie_chart = alt.Chart(status_count).mark_arc().encode(
             theta='Percentage:Q',
             color=alt.Color('Status:N', scale=color_scale),
-            tooltip=['Status', 'Percentage:N']
+            tooltip=[alt.Tooltip('Status:N'), alt.Tooltip('Percentage:Q', format='.0f', title='Percentage', formatType='number')]
         ).properties(
             width=600,
             height=400,
