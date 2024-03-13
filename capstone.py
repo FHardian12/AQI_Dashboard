@@ -29,7 +29,7 @@ prev_day = curr_day - pd.Timedelta(days=1)
 st.sidebar.title("Menu")
 
 # Pilihan menu dalam bentuk select box
-selected_option = st.sidebar.selectbox(
+selected_option = st.sidebar.radio(
     "Pilih Menu",
     ["Dashboard Harian", "Analisis Kualitas Udara"]
 )
