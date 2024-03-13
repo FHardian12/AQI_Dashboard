@@ -219,18 +219,17 @@ if selected_option == "Dashboard Harian":
         pie_chart = alt.Chart(status_count).mark_arc().encode(
             theta='Percentage:Q',
             color=alt.Color('Status:N', scale=color_scale),
-            tooltip=['Status', 'Count'],
-            text=alt.Text('Percentage:Q', format='.1f')  # Menampilkan data label dalam bentuk persentase
+            tooltip=['Status', 'Count']
         ).properties(
             width=600,
             height=400,
             title=f'Persentase Status Kualitas Udara Per Provinsi'
         )
         # Tambahkan teks untuk menampilkan persentase di sekitar juring pie chart
-        textpie = pie_chart.mark_text(align='center', baseline='middle', dx=0, dy=0).encode(
+        textpie = pie_chart.mark_text(align='center', baseline='middle', dx=3, dy=3).encode(
             text=alt.Text('Percentage:Q', format='.1f'),
-            radius=alt.Radius(0.7),  # Jarak dari pusat pie chart
-            theta='Percentage:Q'  # Arah teks sesuai dengan sudut pie chart
+            angle=alt.Angle('Percentage:Q', sort=None),  # Atur sudut teks sesuai dengan persentase
+            radius=alt.Radius(0.8)  # Jarak teks dari pusat pie chart
         )
         # Gabungkan pie chart dan teks
         pie_chart_with_text = pie_chart + textpie
