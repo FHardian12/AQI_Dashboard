@@ -219,7 +219,8 @@ if selected_option == "Dashboard Harian":
         pie_chart = alt.Chart(status_count).mark_arc().encode(
             theta='Percentage:Q',
             color=alt.Color('Status:N', scale=color_scale),
-            tooltip=['Status', 'Count']
+            tooltip=['Status', 'Count'],
+            text=alt.Text('Percentage:Q', format='.1f')  # Menampilkan data label dalam bentuk persentase
         ).properties(
             width=600,
             height=400,
