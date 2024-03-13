@@ -226,8 +226,14 @@ if selected_option == "Dashboard Harian":
             height=400,
             title=f'Persentase Status Kualitas Udara Per Provinsi'
         )
+        # Tambahkan teks untuk menampilkan persentase di sekitar juring pie chart
+        textpie = pie_chart.mark_text(align='center', baseline='middle').encode(
+            text=alt.Text('Percentage:Q', format='.1f')
+        )
+        # Gabungkan pie chart dan teks
+        pie_chart_with_text = pie_chart + textpie
         # Tampilkan chart dengan data label
-        st.altair_chart(pie_chart, use_container_width=True)
+        st.altair_chart(pie_chart_with_text, use_container_width=True)
     
     with mx_prov:
         curr_day = max(df['Tanggal'].dt.date)
