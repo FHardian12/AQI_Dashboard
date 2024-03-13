@@ -206,10 +206,6 @@ if selected_option == "Dashboard Harian":
         # Hitung jumlah status
         status_count = df_selected_date['Status'].value_counts().reset_index()
         status_count.columns = ['Status', 'Count']
-        # Hitung total data
-        total_data = status_count['Count'].sum()
-        # Hitung persentase
-        status_count['Percentage'] = (status_count['Count'] / total_data) * 100
         # Definisikan skala warna sesuai dengan kategori status
         color_scale = alt.Scale(
             domain=['GOOD', 'MODERATE', 'POOR', 'UNHEALTHY', 'VERY UNHEALTHY'],
@@ -217,7 +213,7 @@ if selected_option == "Dashboard Harian":
         )
         #Buat diagram lingkaran menggunakan Altair
         pie_chart = alt.Chart(status_count).mark_arc().encode(
-            theta='Percentage:Q',
+            theta='Count:Q',
             color=alt.Color('Status:N', scale=color_scale),
             tooltip=['Status', 'Count']
         ).properties(
@@ -225,21 +221,8 @@ if selected_option == "Dashboard Harian":
             height=400,
             title=f'Persentase Status Kualitas Udara Per Provinsi'
         )
-        # Tambahkan teks untuk menampilkan persentase di sekitar juring pie chart
-        textpie = pie_chart.mark_text(align='center', baseline='middle', dx=5, dy=0).encode(
-            text=alt.Text('Percentage:Q', format='.1f'),
-            angle=alt.Text('mid_angle:Q'),  # Atur sudut teks sesuai dengan sudut juring pie chart
-            radius=alt.Radius(1.1, 'arc')  # Jarak teks dari pusat pie chart
-        ).transform_theta(
-            theta='datum.Percentage / 2',  # Bagi sudut dengan 2 agar teks muncul di sekitar juring
-            as_=['mid_angle']  # Simpan hasilnya ke dalam kolom 'mid_angle'
-        )
-
-        # Gabungkan pie chart dan teks
-        pie_chart_with_text = pie_chart + textpie
-
         # Tampilkan chart dengan data label
-        st.altair_chart(pie_chart_with_text, use_container_width=True)
+        st.altair_chart(pie_chart, use_container_width=True)
     
     with mx_prov:
         curr_day = max(df['Tanggal'].dt.date)
