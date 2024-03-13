@@ -206,7 +206,7 @@ if selected_option == "Dashboard Harian":
         # Hitung jumlah status
         status_count = df_selected_date['Status'].value_counts(normalize=True).reset_index()
         status_count.columns = ['Status', 'Percentage']
-        status_count['Percentage'] = (status_count['Percentage'] * 100).astype(int) + '%' # Convert to percentage and remove decimal
+        status_count['Percentage'] = (status_count['Percentage'] * 100).astype(int) # Convert to percentage and remove decimal
         # Definisikan skala warna sesuai dengan kategori status
         color_scale = alt.Scale(
             domain=['GOOD', 'MODERATE', 'POOR', 'UNHEALTHY', 'VERY UNHEALTHY'],
