@@ -204,8 +204,9 @@ if selected_option == "Dashboard Harian":
         curr_day = max(df['Tanggal'].dt.date)
         df_selected_date = df[df['tgl_day'] == curr_day]
         # Hitung jumlah status
-        status_count = df_selected_date['Status'].value_counts().reset_index()
-        status_count.columns = ['Status', 'Count']
+        status_count = df_selected_date['Status'].value_counts(normalize=True).reset_index()
+        status_count.columns = ['Status', 'Percentage']
+        status_count['Percentage'] = status_count['Percentage'] * 100  # Convert to percentage
         # Definisikan skala warna sesuai dengan kategori status
         color_scale = alt.Scale(
             domain=['GOOD', 'MODERATE', 'POOR', 'UNHEALTHY', 'VERY UNHEALTHY'],
@@ -213,9 +214,9 @@ if selected_option == "Dashboard Harian":
         )
         #Buat diagram lingkaran menggunakan Altair
         pie_chart = alt.Chart(status_count).mark_arc().encode(
-            theta='Count:Q',
+            theta='Percentage:Q',
             color=alt.Color('Status:N', scale=color_scale),
-            tooltip=['Status', 'Count']
+            tooltip=['Status', 'Percentage:N']
         ).properties(
             width=600,
             height=400,
