@@ -385,7 +385,7 @@ elif selected_option == "Analisis Kualitas Udara":
     st.markdown(narasi_dua, unsafe_allow_html=True)
     
     st.subheader('Trend Rata Rata AQI Indonesia')
-    lca1, lca2, lca3 = st.columns([1, 2, 6])
+    lca1, lca2, lca3 = st.columns([2, 2, 6])
     df['Tanggal'] = pd.to_datetime(df['Tanggal'])
 
     with lca2:
@@ -409,7 +409,7 @@ elif selected_option == "Analisis Kualitas Udara":
             x=alt.X('tgl_day:T', axis=alt.Axis(title='Tanggal', format='%d-%m-%Y', labelAngle=90)),  # Tambahkan labelAngle=0
             y=alt.Y('AQI:Q', axis=alt.Axis(title='Rata-rata AQI', grid=False)),  # Sumbu-y untuk AQI
         ).properties(
-            width=800,
+            width=900,
             height=400
         )
 
@@ -450,7 +450,7 @@ elif selected_option == "Analisis Kualitas Udara":
     """
     st.markdown(narasi_tiga, unsafe_allow_html=True)
 
-    r1, r2, r3 = st.columns([1, 2, 6])
+    r1, r2, r3 = st.columns([2, 2, 6])
     with r2:
         # Menghitung rata-rata PM10 per hari
         avg_pm10_per_day = df.groupby('tgl_day')['PM10'].mean().reset_index()
@@ -460,7 +460,7 @@ elif selected_option == "Analisis Kualitas Udara":
             x=alt.X('tgl_day:T', axis=alt.Axis(title='Tanggal', format='%d-%m-%Y', labelAngle=90)),  # Mengubah format tanggal dan labelAngle
             y=alt.Y('PM10:Q', axis=alt.Axis(title='Rata-rata PM10', grid=False)),  # Menghilangkan gridline pada sumbu y
         ).properties(
-            width=800,
+            width=900,
             height=400
         )
 
@@ -489,7 +489,7 @@ elif selected_option == "Analisis Kualitas Udara":
         # if st.checkbox('Tampilkan Data', key='checkbox2'):
         #     st.write(avg_pm10_per_day)
 
-    p1, p2, p3 = st.columns([1, 2, 6])
+    p1, p2, p3 = st.columns([2, 2, 6])
     with p2:
         # Menghitung rata-rata suhu (Temp) per hari
         avg_temp_per_day = df.groupby('tgl_day')['Temp'].mean().reset_index()
@@ -499,7 +499,7 @@ elif selected_option == "Analisis Kualitas Udara":
             x=alt.X('tgl_day:T', axis=alt.Axis(title='Tanggal', format='%d-%m-%Y', labelAngle=90)),  
             y=alt.Y('Temp:Q', axis=alt.Axis(title='Rata-rata Suhu (Temp)', grid=False)), 
         ).properties(
-            width=800,
+            width=900,
             height=400
         )
 
@@ -530,7 +530,7 @@ elif selected_option == "Analisis Kualitas Udara":
         # if st.checkbox('Tampilkan Data', key='checkbox4'):
         #     st.write(avg_temp_per_day)
     
-    q1, q2, q3 = st.columns([1, 2, 6])
+    q1, q2, q3 = st.columns([2, 2, 6])
     with q2:
         # Menghitung rata-rata suhu (Temp) per hari
         avg_humid_per_day = df.groupby('tgl_day')['Humid'].mean().reset_index()
@@ -540,7 +540,7 @@ elif selected_option == "Analisis Kualitas Udara":
             x=alt.X('tgl_day:T', axis=alt.Axis(title='Tanggal', format='%d-%m-%Y', labelAngle=90)),  
             y=alt.Y('Humid:Q', axis=alt.Axis(title='Rata-rata Kelembaban', grid=False)), 
         ).properties(
-            width=800,
+            width=900,
             height=400
         )
 
@@ -568,7 +568,7 @@ elif selected_option == "Analisis Kualitas Udara":
         st.write(chart_with_points_and_text_humid)
 
     st.subheader('Rata Rata Per Provinsi')
-    bpa1, bpa2, bpa3 = st.columns([1, 2, 6])
+    bpa1, bpa2, bpa3 = st.columns([2, 2, 6])
 
     with bpa2:
         # Menghitung rata-rata AQI per provinsi
@@ -598,7 +598,7 @@ elif selected_option == "Analisis Kualitas Udara":
                             legend=alt.Legend(title="Status AQI")),
             tooltip=['Provinsi', alt.Tooltip('AQI:Q', format=',d'), 'status']
         ).properties(
-            width=800,
+            width=900,
             height=400,
         )
 
