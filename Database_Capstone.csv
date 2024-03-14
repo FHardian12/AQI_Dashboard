@@ -623,7 +623,7 @@ Tanggal,Provinsi,Status,AQI,PM2.5,PM10,Temp,Humid
 3/14/2024,Papua Barat,GOOD,21,5,0,28,78
 3/14/2024,Riau,MODERATE,95,33,0,33,56
 3/14/2024,Sulawesi Selatan,GOOD,23,5,5,30,84
-3/14/2024,Sulawesi,Tengah,MODERATE,57,15,0,22,84
+3/14/2024,Sulawesi Tengah,MODERATE,57,15,0,22,84
 3/14/2024,Sulawesi Utara,GOOD,38,9,0,21,92
 3/14/2024,Sumatera Barat,GOOD,44,11,12,30,40
 3/14/2024,Sumatera Selatan,POOR,141,53,0,33,58
